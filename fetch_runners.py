@@ -253,4 +253,22 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    print("Fetching results for diagnostic...")
+    url = "https://api.theracingapi.com/v1/results/today"
+    params = [("region", "gb"), ("region", "ire")]
+    response = requests.get(url, auth=(USERNAME, PASSWORD), params=params)
+    data = response.json()
+    for race in data.get("results", []):
+        trainer_match = any("palmer" in r.get("trainer", "").lower() for r in race.get("runners", []))
+        if trainer_match:
+            print("=== RACE FIELDS ===")
+            for k, v in race.items():
+                if k != "runners":
+                    print(f"  {k}: {v}")
+            print("=== RUNNER FIELDS ===")
+            for r in race.get("runners", []):
+                if "palmer" in r.get("trainer", "").lower():
+                    for k, v in r.items():
+                        print(f"  {k}: {v}")
+                    break
+            break
