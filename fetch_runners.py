@@ -8,7 +8,11 @@ PASSWORD = os.environ["RACING_API_PASSWORD"]
 
 def fetch_hugo_palmer_runners():
     url = "https://api.theracingapi.com/v1/racecards/free"
-    params = {"day": "today", "region_codes": "gb,ire"}
+    params = [
+        ("day", "today"),
+        ("region_codes", "gb"),
+        ("region_codes", "ire"),
+    ]
     
     response = requests.get(url, auth=(USERNAME, PASSWORD), params=params)
     response.raise_for_status()
