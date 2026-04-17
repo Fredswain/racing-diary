@@ -18,7 +18,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests openpyxl
 
       - name: Run script
         env:
@@ -26,6 +26,10 @@ jobs:
           RACING_API_PASSWORD: ${{ secrets.RACING_API_PASSWORD }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHANNEL_ALL_RUNNERS: ${{ secrets.TELEGRAM_CHANNEL_ALL_RUNNERS }}
+          TELEGRAM_CHANNEL_PYTHIA_PURCHASES: ${{ secrets.TELEGRAM_CHANNEL_PYTHIA_PURCHASES }}
+          TELEGRAM_CHANNEL_PYTHIA_TOP30: ${{ secrets.TELEGRAM_CHANNEL_PYTHIA_TOP30 }}
+          TELEGRAM_CHANNEL_BLANDFORD: ${{ secrets.TELEGRAM_CHANNEL_BLANDFORD }}
         run: python fetch_runners.py
 
       - name: Save results
@@ -33,5 +37,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add data/
-          git diff --staged --quiet || git commit -m "Daily Hugo Palmer runners update"
+          git diff --staged --quiet || git commit -m "Daily runners update"
           git push
