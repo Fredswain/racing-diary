@@ -1,37 +1,63 @@
-name: Daily Hugo Palmer Runner Check
+import requests
+import json
+import os
+from datetime import date
 
-on:
-  schedule:
-    - cron: '0 7 * * *'
-  workflow_dispatch:
+USERNAME = os.environ["RACING_API_USERNAME"]
+PASSWORD = os.environ["RACING_API_PASSWORD"]
+TELEGRAM_BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
+TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 
-jobs:
-  fetch:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+def send_telegram(message):
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    requests.post(url, data={"chat_id": TELEGRAM_CHAT_ID, "text": message})
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+def fetch_hugo_palmer_runners():
+    url = "https://api.theracingapi.com/v1/racecards/free"
+    params = [
+        ("day", "today"),
+        ("region_codes", "gb"),
+        ("region_codes", "ire"),
+    ]
+    
+    response = requests.get(url, auth=(USERNAME, PASSWORD), params=params)
+    response.raise_for_status()
+    data = response.json()
 
-      - name: Install dependencies
-        run: pip install requests
+    today = date.today().strftime("%d %b %Y")
+    hugo_runners = []
 
-      - name: Run script
-        env:
-          RACING_API_USERNAME: ${{ secrets.RACING_API_USERNAME }}
-          RACING_API_PASSWORD: ${{ secrets.RACING_API_PASSWORD }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python fetch_runners.py
+    for race in data.get("racecards", []):
+        for runner in race.get("runners", []):
+            if "palmer" in runner.get("trainer", "").lower():
+                hugo_runners.append({
+                    "course": race.get("course"),
+                    "off_time": race.get("off_time"),
+                    "race_name": race.get("race_name"),
+                    "horse": runner.get("horse"),
+                    "jockey": runner.get("jockey"),
+                    "form": runner.get("form"),
+                })
 
-      - name: Save results
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add data/
-          git diff --staged --quiet || git commit -m "Daily Hugo Palmer runners update"
-          git push
+    if hugo_runners:
+        message = f"🏇 Hugo Palmer Runners - {today}\n"
+        message += f"{len(hugo_runners)} runner(s) found:\n\n"
+        for r in hugo_runners:
+            message += f"🐴 {r['horse']}\n"
+            message += f"📍 {r['course']} | {r['off_time']}\n"
+            message += f"🏁 {r['race_name']}\n"
+            message += f"👤 {r['jockey']}\n"
+            message += f"📊 Form: {r['form']}\n\n"
+    else:
+        message = f"🏇 Hugo Palmer Runners - {today}\n\nNo runners found today."
+
+    send_telegram(message)
+    print(message)
+
+    os.makedirs("data", exist_ok=True)
+    filename = f"data/hugo_palmer_{date.today().isoformat()}.json"
+    with open(filename, "w") as f:
+        json.dump({"date": today, "runners_found": len(hugo_runners), "runners": hugo_runners}, f, indent=2)
+
+if __name__ == "__main__":
+    fetch_hugo_palmer_runners()
