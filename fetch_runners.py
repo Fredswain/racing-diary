@@ -1,3 +1,4 @@
+# Racing diary - daily runner check
 import requests
 import json
 import os
