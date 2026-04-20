@@ -1,0 +1,20 @@
+{
+  "total_runs": 1,
+  "total_wins": 0,
+  "total_prize_available": 8100,
+  "total_prize_won": 951,
+  "runs": [
+    {
+      "date": "2026-04-20",
+      "race_id": "rac_11912615",
+      "horse": "Seagolazo (IRE)",
+      "course": "Redcar",
+      "race_name": "racingtv.com Handicap",
+      "distance": "8f",
+      "class": "Class 3",
+      "position": "4",
+      "prize_available": 8100,
+      "prize_won": 951
+    }
+  ]
+}
