@@ -45,7 +45,7 @@ def load_sales_data():
 
 
 def fetch_racecards():
-    url = "https://api.theracingapi.com/v1/racecards/basic"
+    url = "https://api.theracingapi.com/v1/racecards/standard"
     params = [
         ("day", "today"),
         ("region_codes", "gb"),
