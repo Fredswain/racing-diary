@@ -15,7 +15,7 @@ TELEGRAM_CHAT_ID = os.environ["TELEGRAM_CHAT_ID"]
 # Breeze-up sale channels
 CHANNEL_ALL_RUNNERS = os.environ["TELEGRAM_CHANNEL_ALL_RUNNERS"]
 CHANNEL_PYTHIA_PURCHASES = os.environ["TELEGRAM_CHANNEL_PYTHIA_PURCHASES"]
-CHANNEL_PYTHIA_TOP30 = os.environ["TELEGRAM_CHANNEL_PYTHIA_TOP30"]
+CHANNEL_PYTHIA_TOP50 = os.environ["TELEGRAM_CHANNEL_PYTHIA_TOP50"]
 CHANNEL_BLANDFORD = os.environ["TELEGRAM_CHANNEL_BLANDFORD"]
 
 SALE_SIZE = 160  # Total lots in Craven 2026 sale
@@ -45,7 +45,7 @@ def load_sales_data():
 
 
 def fetch_racecards():
-    url = "https://api.theracingapi.com/v1/racecards/basic"
+    url = "https://api.theracingapi.com/v1/racecards/standard"
     params = [
         ("day", "today"),
         ("region_codes", "gb"),
@@ -203,7 +203,7 @@ def fetch_sale_runners(racecards, sales_lookup):
             unique_matched.append(r)
 
     pythia_purchases = [r for r in unique_matched if r["lot_data"]["pythia_purchase"]]
-    top30 = [r for r in unique_matched if r["lot_data"]["pythia_top30"]]
+    top50 = [r for r in unique_matched if r["lot_data"]["pythia_top50"]]
     blandford = [r for r in unique_matched if r["lot_data"]["blandford_purchase"]]
 
     if unique_matched:
@@ -220,11 +220,11 @@ def fetch_sale_runners(racecards, sales_lookup):
     else:
         send_telegram(CHANNEL_PYTHIA_PURCHASES, f"🏇 Pythia Purchase Runners - {today}\n\nNo runners found today.")
 
-    if top30:
-        msg = build_message("Pythia Top 30 Runners", top30, today)
-        send_telegram(CHANNEL_PYTHIA_TOP30, msg)
+    if top50:
+        msg = build_message("Pythia Top 50 Runners", top50, today)
+        send_telegram(CHANNEL_PYTHIA_TOP50, msg)
     else:
-        send_telegram(CHANNEL_PYTHIA_TOP30, f"🏇 Pythia Top 30 Runners - {today}\n\nNo runners found today.")
+        send_telegram(CHANNEL_PYTHIA_TOP50, f"🏇 Pythia Top 50 Runners - {today}\n\nNo runners found today.")
 
     if blandford:
         msg = build_message("Blandford Purchase Runners", blandford, today)
