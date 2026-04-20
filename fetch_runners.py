@@ -31,15 +31,12 @@ def send_telegram(chat_id, message):
 
 
 def clean_name(name):
-    """Strip country suffixes like (IRE), (GB) etc for matching"""
     return re.sub(r'\s*\([A-Z]+\)', '', str(name)).strip().lower()
 
 
 def load_sales_data():
-    """Load the sales data JSON from the repo"""
     with open("data/sales_data.json", "r") as f:
         data = json.load(f)
-    # Build a lookup dict by cleaned dam name
     lookup = {}
     for lot in data["lots"]:
         key = clean_name(lot["dam"])
@@ -48,8 +45,7 @@ def load_sales_data():
 
 
 def fetch_racecards():
-    """Fetch today's GB & IRE racecards"""
-    url = "https://api.theracingapi.com/v1/racecards/basic"
+    url = "https://api.theracingapi.com/v1/racecards/standard"
     params = [
         ("day", "today"),
         ("region_codes", "gb"),
@@ -60,6 +56,24 @@ def fetch_racecards():
     return response.json()
 
 
+def parse_prize(prize_str):
+    if not prize_str:
+        return 0
+    cleaned = re.sub(r'[£,\s]', '', str(prize_str))
+    try:
+        return int(float(cleaned))
+    except:
+        return 0
+
+
+def save_todays_runners(runner_races):
+    today = date.today().isoformat()
+    filepath = f"data/runners_{today}.json"
+    os.makedirs("data", exist_ok=True)
+    with open(filepath, "w") as f:
+        json.dump(runner_races, f, indent=2)
+
+
 def format_price(price_gns):
     if price_gns is None:
         return "Price unknown"
@@ -67,12 +81,8 @@ def format_price(price_gns):
 
 
 def format_runner_block(runner_info, race_info):
-    """Format a single runner block for the message"""
     lot = runner_info["lot_data"]
     horse_name = runner_info["horse_name"].upper()
-    
-    bio = lot.get("biomechanics_rating")
-    bio_rank = lot.get("biomechanics_rank") or "N/A"
 
     block = f"━━━━━━━━━━━━━━━━━━━━\n"
     block += f"🐴 {horse_name}\n"
@@ -83,18 +93,15 @@ def format_runner_block(runner_info, race_info):
     block += f"💰 {format_price(lot['price_gns'])} | {lot['purchaser']}\n"
     block += f"📊 Pythia Rankings (of {SALE_SIZE}):\n"
     block += f"  *Combined: #{lot['combined_rank']}* | Time: #{lot.get('time_rank', 'N/A')}\n"
-    block += f"  Stride: #{lot.get('stride_rank', 'N/A')} | Biomechanics: #{bio_rank}\n"
-
+    block += f"  Stride: #{lot.get('stride_rank', 'N/A')} | Biomechanics: #{lot.get('biomechanics_rank', 'N/A')}\n"
     return block
 
 
 def build_message(title, matched_runners, today_str):
-    """Build a full grouped digest message"""
     count = len(matched_runners)
     msg = f"🏇 {title} - {today_str}\n"
     msg += f"{count} runner(s) found today:\n\n"
 
-    # Sort by off time
     def time_sort_key(r):
         t = r["race_info"].get("off_time", "99:99")
         try:
@@ -111,11 +118,14 @@ def build_message(title, matched_runners, today_str):
 
 
 def fetch_hugo_palmer_runners(racecards):
-    """Existing Hugo Palmer logic"""
     today = date.today().strftime("%d %b %Y")
     hugo_runners = []
+    runner_races = {}
 
     for race in racecards.get("racecards", []):
+        race_id = race.get("race_id", "")
+        prize_available = parse_prize(race.get("prize", ""))
+
         for runner in race.get("runners", []):
             if "palmer" in runner.get("trainer", "").lower():
                 hugo_runners.append({
@@ -125,7 +135,16 @@ def fetch_hugo_palmer_runners(racecards):
                     "horse": runner.get("horse"),
                     "jockey": runner.get("jockey"),
                     "form": runner.get("form"),
+                    "race_id": race_id,
                 })
+                if race_id not in runner_races:
+                    runner_races[race_id] = {
+                        "course": race.get("course"),
+                        "race_name": race.get("race_name"),
+                        "prize_available": prize_available,
+                    }
+
+    save_todays_runners(runner_races)
 
     if hugo_runners:
         message = f"🏇 Hugo Palmer Runners - {today}\n"
@@ -145,7 +164,6 @@ def fetch_hugo_palmer_runners(racecards):
 
 
 def fetch_sale_runners(racecards, sales_lookup):
-    """Match today's 2yo runners against sale data by dam name"""
     today = date.today().strftime("%d %b %Y")
     all_matched = []
 
@@ -153,7 +171,7 @@ def fetch_sale_runners(racecards, sales_lookup):
         race_info = {
             "course": race.get("course", "Unknown"),
             "off_time": race.get("off_time", ""),
-            "distance": race.get("dist", race.get("distance", "N/A")),
+            "distance": race.get("dist_f", race.get("distance", "N/A")),
             "type": race.get("type", "N/A"),
             "class": f"Class {race.get('class', 'N/A')}",
         }
@@ -176,7 +194,6 @@ def fetch_sale_runners(racecards, sales_lookup):
                     "race_info": race_info,
                 })
 
-    # Remove duplicates (same horse in same race)
     seen = set()
     unique_matched = []
     for r in all_matched:
@@ -185,12 +202,10 @@ def fetch_sale_runners(racecards, sales_lookup):
             seen.add(key)
             unique_matched.append(r)
 
-    # Filter into the 4 channel groups
     pythia_purchases = [r for r in unique_matched if r["lot_data"]["pythia_purchase"]]
     top30 = [r for r in unique_matched if r["lot_data"]["pythia_top30"]]
     blandford = [r for r in unique_matched if r["lot_data"]["blandford_purchase"]]
 
-    # Send to all runners channel
     if unique_matched:
         msg = build_message("Craven Sale Runners", unique_matched, today)
         send_telegram(CHANNEL_ALL_RUNNERS, msg)
@@ -199,32 +214,23 @@ def fetch_sale_runners(racecards, sales_lookup):
         send_telegram(CHANNEL_ALL_RUNNERS, f"🏇 Craven Sale Runners - {today}\n\nNo runners found today.")
         print("All runners: none found")
 
-    # Send to Pythia purchases channel
     if pythia_purchases:
         msg = build_message("Pythia Purchase Runners", pythia_purchases, today)
         send_telegram(CHANNEL_PYTHIA_PURCHASES, msg)
-        print(f"Pythia purchases: {len(pythia_purchases)} sent")
     else:
         send_telegram(CHANNEL_PYTHIA_PURCHASES, f"🏇 Pythia Purchase Runners - {today}\n\nNo runners found today.")
-        print("Pythia purchases: none found")
 
-    # Send to Top 30 channel
     if top30:
         msg = build_message("Pythia Top 30 Runners", top30, today)
         send_telegram(CHANNEL_PYTHIA_TOP30, msg)
-        print(f"Top 30: {len(top30)} sent")
     else:
         send_telegram(CHANNEL_PYTHIA_TOP30, f"🏇 Pythia Top 30 Runners - {today}\n\nNo runners found today.")
-        print("Top 30: none found")
 
-    # Send to Blandford channel
     if blandford:
         msg = build_message("Blandford Purchase Runners", blandford, today)
         send_telegram(CHANNEL_BLANDFORD, msg)
-        print(f"Blandford: {len(blandford)} sent")
     else:
         send_telegram(CHANNEL_BLANDFORD, f"🏇 Blandford Purchase Runners - {today}\n\nNo runners found today.")
-        print("Blandford: none found")
 
     return unique_matched
 
@@ -243,7 +249,6 @@ def main():
     print("Running sale runners check...")
     fetch_sale_runners(racecards, sales_lookup)
 
-    # Save daily log
     today = date.today().isoformat()
     os.makedirs("data", exist_ok=True)
     log = {"date": today, "status": "completed"}
@@ -254,22 +259,4 @@ def main():
 
 
 if __name__ == "__main__":
-    print("Fetching results for diagnostic...")
-    url = "https://api.theracingapi.com/v1/results/today"
-    params = [("region", "gb"), ("region", "ire")]
-    response = requests.get(url, auth=(USERNAME, PASSWORD), params=params)
-    data = response.json()
-    for race in data.get("results", []):
-        trainer_match = any("palmer" in r.get("trainer", "").lower() for r in race.get("runners", []))
-        if trainer_match:
-            print("=== RACE FIELDS ===")
-            for k, v in race.items():
-                if k != "runners":
-                    print(f"  {k}: {v}")
-            print("=== RUNNER FIELDS ===")
-            for r in race.get("runners", []):
-                if "palmer" in r.get("trainer", "").lower():
-                    for k, v in r.items():
-                        print(f"  {k}: {v}")
-                    break
-            break
+    main()
