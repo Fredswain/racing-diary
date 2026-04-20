@@ -1,8 +1,10 @@
-name: Daily Hugo Palmer Runner Check
+name: Daily Racing Checks
 
 on:
   schedule:
     - cron: '0 7 * * *'
+    - cron: '0 16 * * *'
+    - cron: '0 20 * * *'
   workflow_dispatch:
 
 jobs:
@@ -20,7 +22,8 @@ jobs:
       - name: Install dependencies
         run: pip install requests openpyxl
 
-      - name: Run script
+      - name: Run morning script
+        if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && startsWith(github.event.schedule, '0 7'))
         env:
           RACING_API_USERNAME: ${{ secrets.RACING_API_USERNAME }}
           RACING_API_PASSWORD: ${{ secrets.RACING_API_PASSWORD }}
@@ -32,10 +35,28 @@ jobs:
           TELEGRAM_CHANNEL_BLANDFORD: ${{ secrets.TELEGRAM_CHANNEL_BLANDFORD }}
         run: python fetch_runners.py
 
+      - name: Run afternoon results script
+        if: github.event_name == 'schedule' && startsWith(github.event.schedule, '0 16')
+        env:
+          RACING_API_USERNAME: ${{ secrets.RACING_API_USERNAME }}
+          RACING_API_PASSWORD: ${{ secrets.RACING_API_PASSWORD }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python fetch_results.py
+
+      - name: Run evening results script
+        if: github.event_name == 'schedule' && startsWith(github.event.schedule, '0 20')
+        env:
+          RACING_API_USERNAME: ${{ secrets.RACING_API_USERNAME }}
+          RACING_API_PASSWORD: ${{ secrets.RACING_API_PASSWORD }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python fetch_results.py
+
       - name: Save results
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add data/
-          git diff --staged --quiet || git commit -m "Daily runners update"
+          git diff --staged --quiet || git commit -m "Daily racing data update"
           git push
