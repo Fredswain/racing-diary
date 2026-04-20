@@ -20,12 +20,17 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run results script
+- name: Run results script
         env:
           RACING_API_USERNAME: ${{ secrets.RACING_API_USERNAME }}
           RACING_API_PASSWORD: ${{ secrets.RACING_API_PASSWORD }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_CHANNEL_ALL_RUNNERS: ${{ secrets.TELEGRAM_CHANNEL_ALL_RUNNERS }}
+          TELEGRAM_CHANNEL_PYTHIA_TOP50: ${{ secrets.TELEGRAM_CHANNEL_PYTHIA_TOP50 }}
+          TELEGRAM_CHANNEL_PYTHIA_PURCHASES: ${{ secrets.TELEGRAM_CHANNEL_PYTHIA_PURCHASES }}
+          TELEGRAM_CHANNEL_BLANDFORD: ${{ secrets.TELEGRAM_CHANNEL_BLANDFORD }}
+          TELEGRAM_CHANNEL_SUMMARY: ${{ secrets.TELEGRAM_CHANNEL_SUMMARY }}
         run: python fetch_results.py
 
       - name: Save results
