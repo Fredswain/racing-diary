@@ -3,7 +3,7 @@ import requests
 import json
 import os
 import re
-from datetime import date
+from datetime import date, timedelta
 
 USERNAME = os.environ["RACING_API_USERNAME"]
 PASSWORD = os.environ["RACING_API_PASSWORD"]
@@ -81,9 +81,11 @@ def save_hugo_stats(stats):
         json.dump(stats, f, indent=2)
 
 
-def fetch_todays_results():
-    url = "https://api.theracingapi.com/v1/results/today"
-    params = [("region", "gb"), ("region", "ire")]
+def fetch_yesterdays_results():
+    yesterday = (date.today() - timedelta(days=1)).isoformat()
+    url = "https://api.theracingapi.com/v1/results"
+    params = [("start_date", yesterday), ("end_date", yesterday), ("region", "gb"), ("region", "ire")]
+
     response = requests.get(url, auth=(USERNAME, PASSWORD), params=params)
     response.raise_for_status()
     return response.json()
@@ -161,8 +163,9 @@ def get_market_top50(all_lots, sale=None):
 
 
 def check_breeze_up_results(results_data, sales_lookup, all_lots, stats):
-    today = date.today().isoformat()
-    today_str = date.today().strftime("%d %b %Y")
+    yesterday = (date.today() - timedelta(days=1)).isoformat()
+    today = yesterday
+    today_str = (date.today() - timedelta(days=1)).strftime("%d %b %Y")
     already_recorded = set(stats.get("recorded_race_ids", []))
     all_matched = []
 
@@ -253,7 +256,7 @@ def check_breeze_up_results(results_data, sales_lookup, all_lots, stats):
 
 
 def send_summary_messages(stats, all_lots):
-    today_str = date.today().strftime("%d %b %Y")
+    today_str = (date.today() - timedelta(days=1)).strftime("%d %b %Y")
     all_runs = stats.get("runs", [])
     market_top50 = get_market_top50(all_lots)
 
@@ -309,8 +312,9 @@ def send_summary_messages(stats, all_lots):
 
 
 def check_hugo_palmer_results(results_data):
-    today = date.today().isoformat()
-    today_str = date.today().strftime("%d %b %Y")
+    yesterday = (date.today() - timedelta(days=1)).isoformat()
+    today = yesterday
+    today_str = (date.today() - timedelta(days=1)).strftime("%d %b %Y")
     stats = load_hugo_stats()
     already_recorded = set(stats.get("recorded_race_ids", []))
     todays_results = []
@@ -376,7 +380,7 @@ def check_hugo_palmer_results(results_data):
 
 def main():
     print("Fetching today's results...")
-    results_data = fetch_todays_results()
+    results_data = fetch_yesterdays_results()
 
     print("Checking Hugo Palmer results...")
     check_hugo_palmer_results(results_data)
