@@ -2,7 +2,7 @@ name: Daily Evening Results
 
 on:
   schedule:
-    - cron: '0 21 * * *'
+    - cron: '0 6 * * *'
   workflow_dispatch:
 
 jobs:
@@ -38,5 +38,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add data/
-          git diff --staged --quiet || git commit -m "Evening results update"
+          git diff --staged --quiet || git commit -m "Daily results update"
           git push
