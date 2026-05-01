@@ -1,8 +1,8 @@
 {
-  "total_runs": 2,
-  "total_wins": 0,
+  "total_runs": 4,
+  "total_wins": 1,
   "total_prize_available": 8100,
-  "total_prize_won": 1902,
+  "total_prize_won": 20494,
   "runs": [
     {
       "date": "2026-04-20",
@@ -28,9 +28,37 @@
       "position": "4",
       "prize_won": 951,
       "jockey": "Oisin Orr"
+    },
+    {
+      "date": "2026-04-30",
+      "race_id": "rac_11914617",
+      "horse": "Ardisia (IRE)",
+      "course": "Ascot",
+      "race_name": "Commonwealth Cup Trial Stakes (Registered As The Pavilion Stakes)",
+      "distance": "6f",
+      "race_class": "Class 1",
+      "off_time": "3:10",
+      "position": "4",
+      "prize_won": 5092,
+      "jockey": "David Probert"
+    },
+    {
+      "date": "2026-04-30",
+      "race_id": "rac_11914682",
+      "horse": "Adaay Of Scarlett (IRE)",
+      "course": "Ascot",
+      "race_name": "Ascot Shop Royal Ascot Two-Year-Old Trial EBF Conditions Stakes (GBB Race)",
+      "distance": "5f",
+      "race_class": "Class 2",
+      "off_time": "2:00",
+      "position": "1",
+      "prize_won": 13500,
+      "jockey": "James Doyle"
     }
   ],
   "recorded_race_ids": [
-    "rac_11912615"
+    "rac_11914682",
+    "rac_11912615",
+    "rac_11914617"
   ]
 }
