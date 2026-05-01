@@ -81,10 +81,9 @@ def save_hugo_stats(stats):
         json.dump(stats, f, indent=2)
 
 
-def fetch_yesterdays_results():
-    yesterday = (date.today() - timedelta(days=1)).isoformat()
-    url = "https://api.theracingapi.com/v1/results"
-    params = [("start_date", yesterday), ("end_date", yesterday), ("region", "gb"), ("region", "ire")]
+def fetch_todays_results():
+    url = "https://api.theracingapi.com/v1/results/today"
+    params = [("region", "gb"), ("region", "ire")]
 
     response = requests.get(url, auth=(USERNAME, PASSWORD), params=params)
     response.raise_for_status()
@@ -380,7 +379,7 @@ def check_hugo_palmer_results(results_data):
 
 def main():
     print("Fetching today's results...")
-    results_data = fetch_yesterdays_results()
+    results_data = fetch_todays_results()
 
     print("Checking Hugo Palmer results...")
     check_hugo_palmer_results(results_data)
