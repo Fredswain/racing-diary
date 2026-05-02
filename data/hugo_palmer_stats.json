@@ -1,5 +1,5 @@
 {
-  "total_runs": 4,
+  "total_runs": 6,
   "total_wins": 1,
   "total_prize_available": 8100,
   "total_prize_won": 20494,
@@ -54,11 +54,39 @@
       "position": "1",
       "prize_won": 13500,
       "jockey": "James Doyle"
+    },
+    {
+      "date": "2026-05-01",
+      "race_id": "rac_11914994",
+      "horse": "Nolton Cross (IRE)",
+      "course": "Newmarket",
+      "race_name": "Boodles Handicap (GBBPlus Race)",
+      "distance": "12f",
+      "race_class": "Class 2",
+      "off_time": "4:45",
+      "position": "8",
+      "prize_won": 0,
+      "jockey": "Jason Hart"
+    },
+    {
+      "date": "2026-05-01",
+      "race_id": "rac_11939824",
+      "horse": "Fitzella (GB)",
+      "course": "Goodwood",
+      "race_name": "Fitzdares Chelmer Fillies' Stakes ()",
+      "distance": "6f",
+      "race_class": "Class 1",
+      "off_time": "1:30",
+      "position": "6",
+      "prize_won": 0,
+      "jockey": "David Probert"
     }
   ],
   "recorded_race_ids": [
+    "rac_11914994",
+    "rac_11939824",
     "rac_11914682",
-    "rac_11912615",
-    "rac_11914617"
+    "rac_11914617",
+    "rac_11912615"
   ]
 }
