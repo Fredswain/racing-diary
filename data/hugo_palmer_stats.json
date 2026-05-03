@@ -1,8 +1,8 @@
 {
-  "total_runs": 6,
+  "total_runs": 8,
   "total_wins": 1,
   "total_prize_available": 8100,
-  "total_prize_won": 20494,
+  "total_prize_won": 22108,
   "runs": [
     {
       "date": "2026-04-20",
@@ -80,13 +80,41 @@
       "position": "6",
       "prize_won": 0,
       "jockey": "David Probert"
+    },
+    {
+      "date": "2026-05-02",
+      "race_id": "rac_11915046",
+      "horse": "Cheshire Dancer (IRE)",
+      "course": "Newmarket",
+      "race_name": "Betfred Dahlia Stakes  (Fillies & Mares)",
+      "distance": "9f",
+      "race_class": "Class 1",
+      "off_time": "2:20",
+      "position": "10",
+      "prize_won": 0,
+      "jockey": "David Probert"
+    },
+    {
+      "date": "2026-05-02",
+      "race_id": "rac_11915059",
+      "horse": "Brigid's Well (IRE)",
+      "course": "Newmarket",
+      "race_name": "Oliver Brown Pretty Polly Stakes () (Fillies)",
+      "distance": "10f",
+      "race_class": "Class 1",
+      "off_time": "1:45",
+      "position": "5",
+      "prize_won": 1614,
+      "jockey": "Oisin Murphy"
     }
   ],
   "recorded_race_ids": [
     "rac_11914994",
-    "rac_11939824",
-    "rac_11914682",
+    "rac_11915059",
+    "rac_11912615",
+    "rac_11915046",
     "rac_11914617",
-    "rac_11912615"
+    "rac_11939824",
+    "rac_11914682"
   ]
 }
