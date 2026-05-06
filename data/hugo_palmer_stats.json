@@ -1,8 +1,8 @@
 {
-  "total_runs": 8,
+  "total_runs": 12,
   "total_wins": 1,
   "total_prize_available": 8100,
-  "total_prize_won": 22108,
+  "total_prize_won": 39031,
   "runs": [
     {
       "date": "2026-04-20",
@@ -106,15 +106,69 @@
       "position": "5",
       "prize_won": 1614,
       "jockey": "Oisin Murphy"
+    },
+    {
+      "date": "2026-05-05",
+      "race_id": "rac_11928878",
+      "horse": "Ruby's Angel (IRE)",
+      "course": "Chester",
+      "race_name": "American Holidays Handicap",
+      "distance": "6f",
+      "race_class": "Class 3",
+      "off_time": "3:40",
+      "position": "2",
+      "prize_won": 7251,
+      "jockey": "Tom Marquand"
+    },
+    {
+      "date": "2026-05-05",
+      "race_id": "rac_11928878",
+      "horse": "Tricky Tel (GB)",
+      "course": "Chester",
+      "race_name": "American Holidays Handicap",
+      "distance": "6f",
+      "race_class": "Class 3",
+      "off_time": "3:40",
+      "position": "3",
+      "prize_won": 3627,
+      "jockey": "Oisin Orr"
+    },
+    {
+      "date": "2026-05-05",
+      "race_id": "rac_11928878",
+      "horse": "Watcha Snoop (IRE)",
+      "course": "Chester",
+      "race_name": "American Holidays Handicap",
+      "distance": "6f",
+      "race_class": "Class 3",
+      "off_time": "3:40",
+      "position": "12",
+      "prize_won": 0,
+      "jockey": "Jason Watson"
+    },
+    {
+      "date": "2026-05-05",
+      "race_id": "rac_11928865",
+      "horse": "Wait Geordie (GB)",
+      "course": "Chester",
+      "race_name": "CAA Stellar Lily Agnes EBF Conditions Stakes (GBB Race)",
+      "distance": "5f",
+      "race_class": "Class 2",
+      "off_time": "1:30",
+      "position": "3",
+      "prize_won": 6045,
+      "jockey": "Oisin Murphy"
     }
   ],
   "recorded_race_ids": [
-    "rac_11939824",
     "rac_11914682",
+    "rac_11915059",
     "rac_11915046",
-    "rac_11912615",
     "rac_11914994",
     "rac_11914617",
-    "rac_11915059"
+    "rac_11939824",
+    "rac_11928865",
+    "rac_11928878",
+    "rac_11912615"
   ]
 }
