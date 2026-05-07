@@ -35,12 +35,12 @@ def parse_prize(prize_str):
         return 0
 
 
-def position_emoji(pos):
-    if pos == "1": return "🥇"
-    if pos == "2": return "🥈"
-    if pos == "3": return "🥉"
-    if pos in ["PU", "F", "UR", "RO", "BD"]: return "❌"
-    return f"#{pos}"
+def format_position(pos, num_runners):
+    suffixes = {"1": "1st", "2": "2nd", "3": "3rd"}
+    if pos in ["PU", "F", "UR", "RO", "BD"]:
+        return f"{pos} ({num_runners} ran)"
+    suffix = suffixes.get(pos, f"{pos}th")
+    return f"{suffix} ({num_runners} ran)"
 
 
 def load_sales_data():
@@ -91,13 +91,13 @@ def fetch_todays_results():
 
 
 def format_horse_block(r):
-    pos_str = position_emoji(r["position"])
+    pos_str = format_position(r["position"], r.get("num_runners", "?"))
     price_str = f"£{r['price_gbp']:,}" if r["price_gbp"] else "Unknown"
     prize_str = f"£{r['prize_won']:,}" if r["prize_won"] else "No prize"
     block = "━━━━━━━━━━━━━━━━━━━━\n"
     block += f"🐴 *{r['horse'].upper()}*\n"
     block += f"📍 {r['course']} | {r['off_time']} | {r['distance']} | {r['race_type']} | {r['race_class']}\n"
-    block += f"{pos_str} Position: {r['position']}\n"
+    block += f"🏁 {pos_str}\n"
     block += f"👤 {r['jockey']}\n"
     block += f"💰 Prize: {prize_str}\n"
     block += f"🏠 {r['sale_short']} | Lot {r['lot']} | Pythia #{r['combined_rank']} | {price_str}\n"
