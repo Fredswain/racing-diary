@@ -145,19 +145,19 @@ def format_group_block(label, s):
 
 def get_market_top50(all_lots, sale=None):
     if sale:
-        lots = [l for l in all_lots if l["sale"] == sale and l["price_gns"]]
+        lots = [l for l in all_lots if l["sale"] == sale and l["price_gbp"]]
     else:
         lots_by_sale = {}
         for l in all_lots:
-            if l["price_gns"]:
+            if l["price_gbp"]:
                 lots_by_sale.setdefault(l["sale"], []).append(l)
         top50_dams = set()
         for sale_lots in lots_by_sale.values():
-            sale_lots.sort(key=lambda x: x["price_gns"], reverse=True)
+            sale_lots.sort(key=lambda x: x["price_gbp"], reverse=True)
             for lot in sale_lots[:50]:
                 top50_dams.add(clean_name(lot["dam"]))
         return top50_dams
-    lots.sort(key=lambda x: x["price_gns"], reverse=True)
+    lots.sort(key=lambda x: x["price_gbp"], reverse=True)
     return set(clean_name(l["dam"]) for l in lots[:50])
 
 
