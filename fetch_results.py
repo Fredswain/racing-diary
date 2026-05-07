@@ -208,6 +208,7 @@ def check_breeze_up_results(results_data, sales_lookup, all_lots, stats):
                     "prize_won": prize_won,
                     "jockey": runner.get("jockey", "Unknown"),
                     "or_rating": runner.get("or", ""),
+                    "num_runners": len(race.get("runners", [])),
                 }
                 all_matched.append(run_record)
                 already_recorded.add(race_id)
