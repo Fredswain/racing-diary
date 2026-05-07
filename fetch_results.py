@@ -92,7 +92,7 @@ def fetch_todays_results():
 
 def format_horse_block(r):
     pos_str = position_emoji(r["position"])
-    price_str = f"£{r['price_gns']:,}" if r["price_gns"] else "Unknown"
+    price_str = f"£{r['price_gbp']:,}" if r["price_gbp"] else "Unknown"
     prize_str = f"£{r['prize_won']:,}" if r["prize_won"] else "No prize"
     block = "━━━━━━━━━━━━━━━━━━━━\n"
     block += f"🐴 *{r['horse'].upper()}*\n"
@@ -116,7 +116,7 @@ def compute_group_stats(runs, filter_fn=None):
     winners = len(set(r["horse"] for r in runs if r["is_win"]))
     places = sum(1 for r in runs if r["is_place"])
     prize = sum(r["prize_won"] for r in runs)
-    spent = sum(r["price_gns"] for r in runs if r["price_gns"])
+    spent = sum(r["price_gbp"] for r in runs if r["price_gbp"])
     win_pct = (wins / total_runs * 100) if total_runs > 0 else 0
     prize_per_runner = (prize / runners) if runners > 0 else 0
     prize_pct_spend = (prize / spent * 100) if spent > 0 else 0
@@ -190,7 +190,7 @@ def check_breeze_up_results(results_data, sales_lookup, all_lots, stats):
                     "lot": lot["lot"],
                     "sire": lot["sire"],
                     "purchaser": lot["purchaser"],
-                    "price_gns": lot["price_gns"],
+                    "price_gbp": lot["price_gbp"],
                     "combined_rank": lot["combined_rank"],
                     "combined_rating": lot["combined_rating"],
                     "pythia_top50": lot["pythia_top50"],
