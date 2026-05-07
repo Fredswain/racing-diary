@@ -74,10 +74,10 @@ def save_todays_runners(runner_races):
         json.dump(runner_races, f, indent=2)
 
 
-def format_price(price_gns):
-    if price_gns is None:
+def format_price(price_gbp):
+    if price_gbp is None:
         return "Price unknown"
-    return f"{price_gns:,} gns"
+    return f"£{price_gbp:,}"
 
 
 def format_runner_block(runner_info, race_info):
@@ -90,7 +90,7 @@ def format_runner_block(runner_info, race_info):
     block += f"📍 {race_info['course']} | {race_info['off_time']} | {race_info.get('distance', 'N/A')} | {race_info.get('type', 'N/A')} | {race_info.get('class', 'N/A')}\n"
     block += f"👤 Jockey: {runner_info['jockey']}\n"
     block += f"🏠 {lot['sale_short']} | Lot {lot['lot']}\n"
-    block += f"💰 {format_price(lot['price_gns'])} | {lot['purchaser']}\n"
+    block += f"💰 {format_price(lot['price_gbp'])} | {lot['purchaser']}\n"
     block += f"📊 Pythia Rankings (of {SALE_SIZE}):\n"
     block += f"  *Combined: #{lot['combined_rank']}* | Time: #{lot.get('time_rank', 'N/A')}\n"
     block += f"  Stride: #{lot.get('stride_rank', 'N/A')} | Biomechanics: #{lot.get('biomechanics_rank', 'N/A')}\n"
