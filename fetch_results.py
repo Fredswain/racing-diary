@@ -354,7 +354,7 @@ def check_hugo_palmer_results(results_data):
     if todays_results:
         msg = f"🏁 *Hugo Palmer Results - {today_str}*\n\n"
         for r in sorted(todays_results, key=lambda x: x.get("off_time", "99:99")):
-            pos_str = position_emoji(r["position"])
+            pos_str = format_position(r["position"], r.get("num_runners", "?"))
             msg += f"{pos_str} *{r['horse']}*\n"
             msg += f"📍 {r['course']} | {r['distance']} | {r['race_class']}\n"
             msg += f"🏁 {r['race_name']}\n"
