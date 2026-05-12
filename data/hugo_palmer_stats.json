@@ -1,8 +1,8 @@
 {
-  "total_runs": 12,
+  "total_runs": 14,
   "total_wins": 1,
   "total_prize_available": 8100,
-  "total_prize_won": 39031,
+  "total_prize_won": 41491,
   "runs": [
     {
       "date": "2026-04-20",
@@ -158,17 +158,45 @@
       "position": "3",
       "prize_won": 6045,
       "jockey": "Oisin Murphy"
+    },
+    {
+      "date": "2026-05-11",
+      "race_id": "rac_11932193",
+      "horse": "Thestral (GB)",
+      "course": "Lingfield (AW)",
+      "race_name": "Sky Sports Racing Sky 415 Handicap",
+      "distance": "7f",
+      "race_class": "Class 6",
+      "off_time": "6:50",
+      "position": "2",
+      "prize_won": 1522,
+      "jockey": "Oisin Murphy"
+    },
+    {
+      "date": "2026-05-11",
+      "race_id": "rac_11930152",
+      "horse": "Regulus Black (GB)",
+      "course": "Beverley",
+      "race_name": "Racing Welfare Supporting Mental Health Handicap",
+      "distance": "10f",
+      "race_class": "Class 6",
+      "off_time": "5:10",
+      "position": "3",
+      "prize_won": 938,
+      "jockey": "Jason Hart"
     }
   ],
   "recorded_race_ids": [
-    "rac_11914682",
-    "rac_11915059",
+    "rac_11912615",
+    "rac_11928878",
+    "rac_11932193",
     "rac_11915046",
-    "rac_11914994",
-    "rac_11914617",
+    "rac_11930152",
     "rac_11939824",
     "rac_11928865",
-    "rac_11928878",
-    "rac_11912615"
+    "rac_11915059",
+    "rac_11914682",
+    "rac_11914994",
+    "rac_11914617"
   ]
 }
