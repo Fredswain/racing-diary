@@ -92,7 +92,7 @@ def fetch_todays_results():
 
 def format_horse_block(r):
     pos_str = format_position(r["position"], r.get("num_runners", "?"))
-    price_str = f"£{r['price_gbp']:,}" if r["price_gbp"] else "Unknown"
+    price_str = f"£{r.get('price_gbp'):,}" if r.get("price_gbp") else "Unknown"
     prize_str = f"£{r['prize_won']:,}" if r["prize_won"] else "No prize"
     block = "━━━━━━━━━━━━━━━━━━━━\n"
     block += f"🐴 *{r['horse'].upper()}*\n"
@@ -116,7 +116,7 @@ def compute_group_stats(runs, filter_fn=None):
     winners = len(set(r["horse"] for r in runs if r["is_win"]))
     places = sum(1 for r in runs if r["is_place"])
     prize = sum(r["prize_won"] for r in runs)
-    spent = sum(r["price_gbp"] for r in runs if r["price_gbp"])
+    spent = sum(r.get("price_gbp", 0) for r in runs if r.get("price_gbp"))
     win_pct = (wins / total_runs * 100) if total_runs > 0 else 0
     prize_per_runner = (prize / runners) if runners > 0 else 0
     prize_pct_spend = (prize / spent * 100) if spent > 0 else 0
