@@ -1,11 +1,12 @@
 {
   "recorded_race_ids": [
-    "rac_11930581",
-    "rac_11930464",
     "rac_11930113",
-    "rac_11915072",
+    "rac_11930789",
+    "rac_11915085",
+    "rac_11930581",
     "rac_11930386",
-    "rac_11915085"
+    "rac_11915072",
+    "rac_11930464"
   ],
   "runs": [
     {
@@ -245,6 +246,36 @@
       "jockey": "Hollie Doyle",
       "or_rating": "\u2013",
       "num_runners": 6
+    },
+    {
+      "date": "2026-05-14",
+      "race_id": "rac_11930789",
+      "horse": "Kamaal (IRE)",
+      "dam": "La Australiana",
+      "sale": "Craven Breeze Up 2026",
+      "sale_short": "Craven 2026",
+      "lot": 30,
+      "sire": "Minzaal",
+      "purchaser": "Jack Jones Racing",
+      "price_gbp": 94500,
+      "combined_rank": 115,
+      "combined_rating": 23.9,
+      "pythia_top50": false,
+      "pythia_purchase": false,
+      "blandford_purchase": false,
+      "course": "Newbury",
+      "off_time": "3:18",
+      "distance": "6f",
+      "race_class": "Class 4",
+      "race_type": "Flat",
+      "race_name": "ARC Proud To Support Starlight Maiden Stakes (GBB/IRE Incentive Race)",
+      "position": "5",
+      "is_win": false,
+      "is_place": false,
+      "prize_won": 0,
+      "jockey": "Cieren Fallon",
+      "or_rating": "\u2013",
+      "num_runners": 10
     }
   ]
 }
