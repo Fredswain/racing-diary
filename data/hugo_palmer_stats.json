@@ -1,8 +1,8 @@
 {
-  "total_runs": 16,
+  "total_runs": 17,
   "total_wins": 3,
   "total_prize_available": 8100,
-  "total_prize_won": 54916,
+  "total_prize_won": 55793,
   "runs": [
     {
       "date": "2026-04-20",
@@ -210,21 +210,35 @@
       "position": "1",
       "prize_won": 7215,
       "jockey": "Oisin Murphy"
+    },
+    {
+      "date": "2026-05-15",
+      "race_id": "rac_11930906",
+      "horse": "Ardisia (IRE)",
+      "course": "Newbury",
+      "race_name": "Highclere Castle Gin Carnarvon Stakes ()",
+      "distance": "6f",
+      "race_class": "Class 1",
+      "off_time": "3:10",
+      "position": "6",
+      "prize_won": 877,
+      "jockey": "Colin Keane"
     }
   ],
   "recorded_race_ids": [
-    "rac_11914617",
-    "rac_11914682",
-    "rac_11930672",
-    "rac_11915059",
-    "rac_11928878",
-    "rac_11930152",
-    "rac_11932193",
-    "rac_11928865",
     "rac_11930958",
-    "rac_11912615",
+    "rac_11914617",
     "rac_11914994",
+    "rac_11932193",
+    "rac_11939824",
+    "rac_11928878",
+    "rac_11930672",
+    "rac_11930906",
     "rac_11915046",
-    "rac_11939824"
+    "rac_11930152",
+    "rac_11914682",
+    "rac_11915059",
+    "rac_11928865",
+    "rac_11912615"
   ]
 }
