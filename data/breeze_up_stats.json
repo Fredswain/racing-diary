@@ -1,13 +1,14 @@
 {
   "recorded_race_ids": [
-    "rac_11915085",
-    "rac_11930581",
-    "rac_11931140",
+    "rac_11915072",
     "rac_11930386",
-    "rac_11930464",
     "rac_11930789",
+    "rac_11931140",
+    "rac_11915085",
     "rac_11930113",
-    "rac_11915072"
+    "rac_11968190",
+    "rac_11930581",
+    "rac_11930464"
   ],
   "runs": [
     {
@@ -337,6 +338,36 @@
       "jockey": "Rob Hornby",
       "or_rating": "\u2013",
       "num_runners": 9
+    },
+    {
+      "date": "2026-05-16",
+      "race_id": "rac_11968190",
+      "horse": "Pala Aurelia (IRE)",
+      "dam": "Scream Blue Murder",
+      "sale": "Craven Breeze Up 2026",
+      "sale_short": "Craven 2026",
+      "lot": 96,
+      "sire": "St Mark's Basilica",
+      "purchaser": "Avenue Bloodstock / M V Magnier / O'Brien / Linda Shanahan / John Barrett ",
+      "price_gbp": 241500,
+      "combined_rank": 4,
+      "combined_rating": 41.9,
+      "pythia_top50": true,
+      "pythia_purchase": false,
+      "blandford_purchase": false,
+      "course": "Naas (IRE)",
+      "off_time": "2:56",
+      "distance": "5f",
+      "race_class": "",
+      "race_type": "Flat",
+      "race_name": "Coolmore Stud Blackbeard Race",
+      "position": "5",
+      "is_win": false,
+      "is_place": false,
+      "prize_won": 0,
+      "jockey": "Seamie Heffernan",
+      "or_rating": "\u2013",
+      "num_runners": 5
     }
   ]
 }
