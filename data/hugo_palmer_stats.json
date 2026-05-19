@@ -1,8 +1,8 @@
 {
-  "total_runs": 20,
+  "total_runs": 22,
   "total_wins": 3,
   "total_prize_available": 8100,
-  "total_prize_won": 56552,
+  "total_prize_won": 59087,
   "runs": [
     {
       "date": "2026-04-20",
@@ -262,25 +262,53 @@
       "position": "5",
       "prize_won": 244,
       "jockey": "Jack Nicholls"
+    },
+    {
+      "date": "2026-05-18",
+      "race_id": "rac_11944478",
+      "horse": "I'm Just Ken (GB)",
+      "course": "Nottingham",
+      "race_name": "Events And Hospitality At Nottingham Racecourse Handicap",
+      "distance": "8.5f",
+      "race_class": "Class 4",
+      "off_time": "3:50",
+      "position": "9",
+      "prize_won": 0,
+      "jockey": "Ross Coakley"
+    },
+    {
+      "date": "2026-05-18",
+      "race_id": "rac_11944491",
+      "horse": "Lucky Camino (IRE)",
+      "course": "Nottingham",
+      "race_name": "\u00a39 Racedays At Nottingham Novice Stakes (GBB Race)",
+      "distance": "8.5f",
+      "race_class": "Class 4",
+      "off_time": "2:20",
+      "position": "2",
+      "prize_won": 2535,
+      "jockey": "Kieran Shoemark"
     }
   ],
   "recorded_race_ids": [
-    "rac_11944088",
-    "rac_11928865",
-    "rac_11932193",
-    "rac_11914617",
-    "rac_11930672",
-    "rac_11915046",
-    "rac_11930958",
-    "rac_11928878",
-    "rac_11931296",
-    "rac_11944361",
-    "rac_11914994",
-    "rac_11912615",
-    "rac_11914682",
-    "rac_11915059",
     "rac_11939824",
+    "rac_11944088",
+    "rac_11912615",
+    "rac_11914617",
+    "rac_11930958",
+    "rac_11915059",
+    "rac_11914682",
+    "rac_11930672",
+    "rac_11928878",
     "rac_11930152",
-    "rac_11930906"
+    "rac_11928865",
+    "rac_11914994",
+    "rac_11944478",
+    "rac_11930906",
+    "rac_11932193",
+    "rac_11915046",
+    "rac_11944361",
+    "rac_11931296",
+    "rac_11944491"
   ]
 }
