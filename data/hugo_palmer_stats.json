@@ -1,8 +1,8 @@
 {
-  "total_runs": 24,
+  "total_runs": 26,
   "total_wins": 3,
   "total_prize_available": 8100,
-  "total_prize_won": 59721,
+  "total_prize_won": 63840,
   "runs": [
     {
       "date": "2026-04-20",
@@ -314,29 +314,57 @@
       "position": "4",
       "prize_won": 634,
       "jockey": "Jason Hart"
+    },
+    {
+      "date": "2026-05-21",
+      "race_id": "rac_11945115",
+      "horse": "Pat's Cash (GB)",
+      "course": "Haydock",
+      "race_name": "Oakmere Homes Together For Macmillan EBF Novice Stakes (GBB Race)",
+      "distance": "7f",
+      "race_class": "Class 3",
+      "off_time": "3:30",
+      "position": "2",
+      "prize_won": 3295,
+      "jockey": "Oisin Murphy"
+    },
+    {
+      "date": "2026-05-21",
+      "race_id": "rac_11945102",
+      "horse": "Jazz Queen (IRE)",
+      "course": "Haydock",
+      "race_name": "Oakmere Homes Supporting Macmillan EBF Maiden Fillies' Stakes (GBB Race)",
+      "distance": "6f",
+      "race_class": "Class 3",
+      "off_time": "2:20",
+      "position": "4",
+      "prize_won": 824,
+      "jockey": "Oisin Murphy"
     }
   ],
   "recorded_race_ids": [
-    "rac_11915046",
-    "rac_11914994",
-    "rac_11932193",
-    "rac_11914682",
+    "rac_11944777",
     "rac_11928878",
+    "rac_11912615",
     "rac_11928865",
+    "rac_11930672",
+    "rac_11915059",
     "rac_11914617",
     "rac_11930958",
-    "rac_11912615",
+    "rac_11939824",
+    "rac_11945037",
+    "rac_11915046",
+    "rac_11914994",
     "rac_11930152",
     "rac_11944478",
-    "rac_11944361",
-    "rac_11944777",
-    "rac_11915059",
-    "rac_11939824",
+    "rac_11944088",
     "rac_11930906",
-    "rac_11945037",
-    "rac_11930672",
-    "rac_11944491",
+    "rac_11944361",
+    "rac_11945102",
     "rac_11931296",
-    "rac_11944088"
+    "rac_11914682",
+    "rac_11932193",
+    "rac_11944491",
+    "rac_11945115"
   ]
 }
