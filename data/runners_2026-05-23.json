@@ -1,0 +1,27 @@
+{
+  "rac_11945193": {
+    "course": "Haydock",
+    "race_name": "William Hill Epic Boost British EBF Hedge Of Oak Stakes (Listed Race)",
+    "prize_available": 34026
+  },
+  "rac_11945180": {
+    "course": "Haydock",
+    "race_name": "William Hill Silver Bowl Handicap (Heritage Handicap)",
+    "prize_available": 51540
+  },
+  "rac_11945856": {
+    "course": "York",
+    "race_name": "Tomahawk EBF Restricted Novice Stakes (Bands A, B, C And D) (EBF Qualifier) (GBB Race)",
+    "prize_available": 12885
+  },
+  "rac_11945791": {
+    "course": "York",
+    "race_name": "William Hill Epic Boost Handicap",
+    "prize_available": 33501
+  },
+  "rac_11945804": {
+    "course": "York",
+    "race_name": "Royal Yorkshire Regiment Handicap (GBBPlus Race)",
+    "prize_available": 14174
+  }
+}
