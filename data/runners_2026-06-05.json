@@ -1,0 +1,37 @@
+{
+  "rac_11960169": {
+    "course": "Bath",
+    "race_name": "RUHX Handicap",
+    "prize_available": 4187
+  },
+  "rac_11960195": {
+    "course": "Bath",
+    "race_name": "Bath University Handicap",
+    "prize_available": 3454
+  },
+  "rac_11960455": {
+    "course": "Doncaster",
+    "race_name": "Download The Raceday Ready App Handicap",
+    "prize_available": 4397
+  },
+  "rac_11960650": {
+    "course": "Epsom",
+    "race_name": "Oddschecker British EBF Woodcote Stakes (Conditions Race) (GBB Race)",
+    "prize_available": 38655
+  },
+  "rac_11960572": {
+    "course": "Epsom",
+    "race_name": "Betfred Diomed Stakes (Group 3)",
+    "prize_available": 70888
+  },
+  "rac_11960598": {
+    "course": "Epsom",
+    "race_name": "Cygames Surrey Stakes (Listed Race)",
+    "prize_available": 48204
+  },
+  "rac_11960624": {
+    "course": "Epsom",
+    "race_name": "Debenhams Handicap",
+    "prize_available": 38655
+  }
+}
