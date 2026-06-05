@@ -83,7 +83,7 @@ def save_hugo_stats(stats):
 
 def fetch_todays_results():
     url = "https://api.theracingapi.com/v1/results/today"
-    params = [("region", "gb"), ("region", "ire")]
+    params = [("region", "gb"), ("region", "ire"), ("limit", "200")]
 
     response = requests.get(url, auth=(USERNAME, PASSWORD), params=params)
     response.raise_for_status()
