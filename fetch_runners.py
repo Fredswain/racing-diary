@@ -18,9 +18,6 @@ CHANNEL_PYTHIA_PURCHASES = os.environ["TELEGRAM_CHANNEL_PYTHIA_PURCHASES"]
 CHANNEL_PYTHIA_TOP50 = os.environ["TELEGRAM_CHANNEL_PYTHIA_TOP50"]
 CHANNEL_BLANDFORD = os.environ["TELEGRAM_CHANNEL_BLANDFORD"]
 
-SALE_SIZE = 160  # Total lots in Craven 2026 sale
-
-
 def send_telegram(chat_id, message):
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
     requests.post(url, data={
@@ -91,9 +88,7 @@ def format_runner_block(runner_info, race_info):
     block += f"👤 Jockey: {runner_info['jockey']}\n"
     block += f"🏠 {lot['sale_short']} | Lot {lot['lot']}\n"
     block += f"💰 {format_price(lot['price_gbp'])} | {lot['purchaser']}\n"
-    block += f"📊 Pythia Rankings (of {SALE_SIZE}):\n"
-    block += f"  *Combined: #{lot['combined_rank']}* | Time: #{lot.get('time_rank', 'N/A')}\n"
-    block += f"  Stride: #{lot.get('stride_rank', 'N/A')} | Biomechanics: #{lot.get('biomechanics_rank', 'N/A')}\n"
+    block += f"📊 Pythia: #{lot['combined_rank']} ({lot.get('combined_rating', 'N/A')}) | Time: {lot.get('time_rating', 'N/A')} | Stride: {lot.get('stride_rating', 'N/A')} | Bio: {lot.get('biomechanics_rating', 'N/A')}\n"
     return block
 
 
