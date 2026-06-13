@@ -1,0 +1,47 @@
+{
+  "rac_11962444": {
+    "course": "Chester",
+    "race_name": "Saturday Social Handicap",
+    "prize_available": 12885
+  },
+  "rac_11962418": {
+    "course": "Chester",
+    "race_name": "Ladbrokes Get More With Racing Bet Builder Handicap",
+    "prize_available": 25770
+  },
+  "rac_11962431": {
+    "course": "Chester",
+    "race_name": "Colette, Lynn And Rachel's 50th Birthday Handicap (GBBPlus Race)",
+    "prize_available": 12885
+  },
+  "rac_11962457": {
+    "course": "Chester",
+    "race_name": "John Smith's Handicap",
+    "prize_available": 12885
+  },
+  "rac_11962977": {
+    "course": "Leicester",
+    "race_name": "British EBF Restricted Maiden Stakes (Bands B, C & D) (EBF Qualifier) (GBB/IRE Incentive) (Div I)",
+    "prize_available": 5234
+  },
+  "rac_11996231": {
+    "course": "Leicester",
+    "race_name": "British EBF Restricted Maiden Stakes (Bands B, C & D) (EBF Qualifier) (GBB/IRE Incentive) (Div II)",
+    "prize_available": 5234
+  },
+  "rac_11962964": {
+    "course": "Leicester",
+    "race_name": "WM Installations Ltd Maiden Stakes (GBB Race)",
+    "prize_available": 5234
+  },
+  "rac_11962782": {
+    "course": "York",
+    "race_name": "Churchill Tyres Supporting Macmillan Sprint Handicap",
+    "prize_available": 64425
+  },
+  "rac_11962860": {
+    "course": "York",
+    "race_name": "Tomahawk Restaurants Supporting Macmillan EBF Maiden Stakes (GBB/IRE Incentive Race)",
+    "prize_available": 12885
+  }
+}
