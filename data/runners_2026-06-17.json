@@ -1,0 +1,27 @@
+{
+  "rac_11974573": {
+    "course": "Ascot",
+    "race_name": "Kensington Palace Stakes (Fillies' Handicap)",
+    "prize_available": 61848
+  },
+  "rac_11974560": {
+    "course": "Ascot",
+    "race_name": "Windsor Castle Stakes (Listed Race)",
+    "prize_available": 70888
+  },
+  "rac_11974794": {
+    "course": "Ffos Las",
+    "race_name": "RHN Travel Handicap",
+    "prize_available": 5339
+  },
+  "rac_11974950": {
+    "course": "Hamilton",
+    "race_name": "Hampton By Hilton Hamilton Park Handicap",
+    "prize_available": 3664
+  },
+  "rac_11975028": {
+    "course": "Ripon",
+    "race_name": "Sky Sports Racing Sky 415 Fillies' Handicap",
+    "prize_available": 4711
+  }
+}
