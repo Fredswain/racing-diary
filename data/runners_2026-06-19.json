@@ -1,0 +1,27 @@
+{
+  "rac_11931569": {
+    "course": "Ascot",
+    "race_name": "Commonwealth Cup (Group 1) (No Geldings)",
+    "prize_available": 396970
+  },
+  "rac_11974703": {
+    "course": "Ascot",
+    "race_name": "Sandringham Stakes (Handicap) (Fillies)",
+    "prize_available": 61848
+  },
+  "rac_11974716": {
+    "course": "Ascot",
+    "race_name": "Palace Of Holyroodhouse (Handicap)",
+    "prize_available": 61848
+  },
+  "rac_11975353": {
+    "course": "Ayr",
+    "race_name": "AU Signature Handicap",
+    "prize_available": 4187
+  },
+  "rac_11975574": {
+    "course": "Newmarket (July)",
+    "race_name": "Zyn Strong Stride Handicap",
+    "prize_available": 5154
+  }
+}
