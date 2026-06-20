@@ -1,0 +1,32 @@
+{
+  "rac_11974755": {
+    "course": "Ascot",
+    "race_name": "Norfolk Stakes (Group 2)",
+    "prize_available": 99243
+  },
+  "rac_11974742": {
+    "course": "Ascot",
+    "race_name": "Jersey Stakes (Group 3)",
+    "prize_available": 99243
+  },
+  "rac_11947910": {
+    "course": "Ascot",
+    "race_name": "Wokingham Stakes (Heritage Handicap)",
+    "prize_available": 90195
+  },
+  "rac_11975899": {
+    "course": "Doncaster",
+    "race_name": "Ian \"Festa\" Smithurst Memorial Handicap",
+    "prize_available": 5653
+  },
+  "rac_11975925": {
+    "course": "Doncaster",
+    "race_name": "Download The At The Races App Handicap",
+    "prize_available": 4397
+  },
+  "rac_11995789": {
+    "course": "Nottingham",
+    "race_name": "Wildwest Beer Festival 4th July Handicap (GBBPlus Race)",
+    "prize_available": 5757
+  }
+}
