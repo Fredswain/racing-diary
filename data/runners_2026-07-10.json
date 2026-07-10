@@ -1,0 +1,57 @@
+{
+  "rac_11990940": {
+    "course": "Ascot",
+    "race_name": "JLL Handicap (Rnd)",
+    "prize_available": 16200
+  },
+  "rac_11990992": {
+    "course": "Ascot",
+    "race_name": "Long Harbour Handicap",
+    "prize_available": 12885
+  },
+  "rac_11991161": {
+    "course": "Chester",
+    "race_name": "Excell Supply EBF Restricted Novice Stakes (GBB Race)",
+    "prize_available": 7731
+  },
+  "rac_11991148": {
+    "course": "Chester",
+    "race_name": "CAA Stellar Nursery",
+    "prize_available": 7731
+  },
+  "rac_11991096": {
+    "course": "Chester",
+    "race_name": "ESL Export Handicap (GBBPlus Race)",
+    "prize_available": 12885
+  },
+  "rac_11991109": {
+    "course": "Chester",
+    "race_name": "John Smith's Handicap",
+    "prize_available": 7731
+  },
+  "rac_13000000013": {
+    "course": "Chester",
+    "race_name": "Fired Up Tess Handicap Stakes (Div I)",
+    "prize_available": 7731
+  },
+  "rac_11978174": {
+    "course": "Newmarket",
+    "race_name": "Oddschecker Handicap (Heritage Handicap) (GBBPlus Race)",
+    "prize_available": 51540
+  },
+  "rac_11990836": {
+    "course": "Newmarket",
+    "race_name": "Weatherbys Banking Group British EBF Maiden Fillies' Stakes (GBB Race)",
+    "prize_available": 10823
+  },
+  "rac_11991278": {
+    "course": "York",
+    "race_name": "William Hill Extra Place Races Daily Handicap",
+    "prize_available": 15462
+  },
+  "rac_11991265": {
+    "course": "York",
+    "race_name": "William Hill Summer Stakes (Fillies' & Mares' Group 3)",
+    "prize_available": 56710
+  }
+}
