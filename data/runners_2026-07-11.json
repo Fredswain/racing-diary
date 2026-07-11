@@ -1,0 +1,52 @@
+{
+  "rac_11991018": {
+    "course": "Ascot",
+    "race_name": "Club 26 Heritage Handicap",
+    "prize_available": 51540
+  },
+  "rac_11991005": {
+    "course": "Ascot",
+    "race_name": "Juddmonte Summer Mile Stakes (Group 2) (Rnd)",
+    "prize_available": 93572
+  },
+  "rac_11991044": {
+    "course": "Ascot",
+    "race_name": "Juddmonte EBF Restricted Novice Stakes (GBB Race)",
+    "prize_available": 15462
+  },
+  "rac_11991070": {
+    "course": "Ascot",
+    "race_name": "Racing To Zero Fillies' Handicap (Str)",
+    "prize_available": 16200
+  },
+  "rac_11991252": {
+    "course": "Chester",
+    "race_name": "John Smith's Handicap",
+    "prize_available": 7731
+  },
+  "rac_13000000494": {
+    "course": "Chester",
+    "race_name": "Tom Jones Live At Chester Racecourse Handicap (Div 1)",
+    "prize_available": 7731
+  },
+  "rac_11991174": {
+    "course": "Chester",
+    "race_name": "Raymond & Kathleen Corbett Memorial City Plate Stakes (Listed)",
+    "prize_available": 34026
+  },
+  "rac_11991460": {
+    "course": "Hamilton",
+    "race_name": "Get Your Tickets For Cube Glass Ladies Night Handicap",
+    "prize_available": 5286
+  },
+  "rac_11990914": {
+    "course": "Newmarket",
+    "race_name": "Rossdales British EBF Maiden Stakes",
+    "prize_available": 10823
+  },
+  "rac_11990875": {
+    "course": "Newmarket",
+    "race_name": "HKJC Worldpool Fillies' Handicap",
+    "prize_available": 25770
+  }
+}
