@@ -1,0 +1,42 @@
+{
+  "rac_32292367575": {
+    "course": "Ascot",
+    "race_name": "Princess Margaret Japan Cup Stakes (Group 3)",
+    "prize_available": 45368
+  },
+  "rac_32292369512": {
+    "course": "Ascot",
+    "race_name": "Longines Valiant Stakes (Group 3)",
+    "prize_available": 53874
+  },
+  "rac_32292394693": {
+    "course": "Chester",
+    "race_name": "IRE Incentive, It Pays To Buy Irish Maiden Stakes (GBB Race)",
+    "prize_available": 9277
+  },
+  "rac_32292396630": {
+    "course": "Chester",
+    "race_name": "Wilson Family Handicap Stakes",
+    "prize_available": 15462
+  },
+  "rac_32292400504": {
+    "course": "Chester",
+    "race_name": "John Smith's Handicap Stakes (GBBPlus Race)",
+    "prize_available": 7731
+  },
+  "rac_32292412126": {
+    "course": "Newcastle (AW)",
+    "race_name": "Brack Burger On Uber Eats Beeswing Handicap Stakes (Div II)",
+    "prize_available": 5653
+  },
+  "rac_32292379197": {
+    "course": "York",
+    "race_name": "Sky Bet Dash (Class 2 Heritage Handicap)",
+    "prize_available": 51540
+  },
+  "rac_32292385008": {
+    "course": "York",
+    "race_name": "Sky Bet Price Boosts EBF Fillies' Novice Stakes (GBB Race)",
+    "prize_available": 12885
+  }
+}
