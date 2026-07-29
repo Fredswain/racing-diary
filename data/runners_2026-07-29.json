@@ -1,0 +1,22 @@
+{
+  "rac_32292741416": {
+    "course": "Goodwood",
+    "race_name": "Veuve Clicquot Molecomb Stakes (Group 3)",
+    "prize_available": 62381
+  },
+  "rac_11978213": {
+    "course": "Goodwood",
+    "race_name": "Visit Qatar Sussex Stakes (Group 1)",
+    "prize_available": 680520
+  },
+  "rac_32292776282": {
+    "course": "Sandown",
+    "race_name": "Spillers Winners Handicap Stakes",
+    "prize_available": 4449
+  },
+  "rac_32292778219": {
+    "course": "Sandown",
+    "race_name": "Spillers Fillies' Handicap Stakes",
+    "prize_available": 4449
+  }
+}
