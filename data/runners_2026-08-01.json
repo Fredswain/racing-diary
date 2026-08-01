@@ -1,0 +1,22 @@
+{
+  "rac_11991681": {
+    "course": "Goodwood",
+    "race_name": "Coral Stewards' Cup (Heritage Handicap)",
+    "prize_available": 128850
+  },
+  "rac_32293148186": {
+    "course": "Goodwood",
+    "race_name": "Phase Eight Handicap Stakes",
+    "prize_available": 38655
+  },
+  "rac_32293066832": {
+    "course": "Goodwood",
+    "race_name": "British Stallion Studs Ebf Maiden Stakes (Colts And Geldings Only)",
+    "prize_available": 38655
+  },
+  "rac_32293086202": {
+    "course": "Newmarket (July)",
+    "race_name": "British Stallion Studs Ebf Fillies' Nursery Handicap Stakes",
+    "prize_available": 20616
+  }
+}
