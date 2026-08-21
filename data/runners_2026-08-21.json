@@ -1,0 +1,32 @@
+{
+  "rac_32294992210": {
+    "course": "Newmarket (July)",
+    "race_name": "Racing Welfare Fillies' Novice Stakes (GBB Race)",
+    "prize_available": 6185
+  },
+  "rac_32294860494": {
+    "course": "York",
+    "race_name": "Sky Bet Mile Handicap Stakes (Heritage Handicap)",
+    "prize_available": 51540
+  },
+  "rac_32292156442": {
+    "course": "York",
+    "race_name": "Al Basti Equiworld Dubai Gimcrack Stakes (Group 2)",
+    "prize_available": 141775
+  },
+  "rac_11991720": {
+    "course": "York",
+    "race_name": "Coolmore City Of Troy Nunthorpe Stakes (Group 1)",
+    "prize_available": 340260
+  },
+  "rac_32294864368": {
+    "course": "York",
+    "race_name": "British Stallion Studs EBF Convivial Maiden Stakes (GBB Race)",
+    "prize_available": 51540
+  },
+  "rac_32294866305": {
+    "course": "York",
+    "race_name": "Sky Bet EBF Fillies' Handicap Stakes (GBBPlus Race)",
+    "prize_available": 51540
+  }
+}
