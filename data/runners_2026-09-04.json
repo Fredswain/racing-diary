@@ -1,0 +1,27 @@
+{
+  "rac_32296444960": {
+    "course": "Ascot",
+    "race_name": "Sodexo Live! Handicap Stakes",
+    "prize_available": 13425
+  },
+  "rac_32296448834": {
+    "course": "Haydock",
+    "race_name": "Lee Thomas Christy Memorial Ebf Fillies' Novice Stakes (gbb Race)",
+    "prize_available": 7020
+  },
+  "rac_32296450771": {
+    "course": "Haydock",
+    "race_name": "Tattersalls \u00a340,000 Ebf Fillies' Novice Stakes (gbb Race)",
+    "prize_available": 21600
+  },
+  "rac_32296452708": {
+    "course": "Haydock",
+    "race_name": "Oakmere Homes Handicap Stakes",
+    "prize_available": 5757
+  },
+  "rac_32296460456": {
+    "course": "Kempton (AW)",
+    "race_name": "Unibet/british Stallion Studs Ebf Restricted Novice Stakes (for Horses In Bands B, C And D) (Ebf Restricted Race Qualifier) (GBB Race)",
+    "prize_available": 5940
+  }
+}
