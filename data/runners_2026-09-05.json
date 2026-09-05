@@ -1,0 +1,32 @@
+{
+  "rac_32296580550": {
+    "course": "Ascot",
+    "race_name": "Silent Pool Gin \"Confined\" Handicap Stakes (For Horses Which Have Won No More Than One Race)",
+    "prize_available": 16200
+  },
+  "rac_32296597983": {
+    "course": "Haydock",
+    "race_name": "HKJC World Pool Handicap Stakes",
+    "prize_available": 15702
+  },
+  "rac_32296599920": {
+    "course": "Haydock",
+    "race_name": "Betfair.Betfair Handicap Stakes",
+    "prize_available": 10468
+  },
+  "rac_32296603794": {
+    "course": "Kempton (AW)",
+    "race_name": "William Hill Sirenia Stakes (Group 3)",
+    "prize_available": 42532
+  },
+  "rac_32296644471": {
+    "course": "Thirsk",
+    "race_name": "Personal Touches Day Of Elegance Nursery Handicap Stakes",
+    "prize_available": 4187
+  },
+  "rac_32296646408": {
+    "course": "Thirsk",
+    "race_name": "Jw4x4 Northallerton Nursery Handicap Stakes",
+    "prize_available": 4711
+  }
+}
