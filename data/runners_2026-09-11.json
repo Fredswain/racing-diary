@@ -1,0 +1,42 @@
+{
+  "rac_32297171335": {
+    "course": "Chester",
+    "race_name": "HRS Cladding Handicap Stakes",
+    "prize_available": 7731
+  },
+  "rac_32297173272": {
+    "course": "Chester",
+    "race_name": "Virgin Bet Daily Price Boosts Handicap Stakes",
+    "prize_available": 12885
+  },
+  "rac_32297175209": {
+    "course": "Chester",
+    "race_name": "TMT Group Handicap Stakes",
+    "prize_available": 9277
+  },
+  "rac_32297177146": {
+    "course": "Chester",
+    "race_name": "Virgin Bet Daily Extra Places Fillies' Handicap Stakes",
+    "prize_available": 7731
+  },
+  "rac_32297184894": {
+    "course": "Doncaster",
+    "race_name": "Carlsberg Danish Pilsner Flying Childers Stakes (Group 2)",
+    "prize_available": 73723
+  },
+  "rac_32297192642": {
+    "course": "Doncaster",
+    "race_name": "Tanbry Construction Nursery Handicap Stakes",
+    "prize_available": 13085
+  },
+  "rac_32297194579": {
+    "course": "Doncaster",
+    "race_name": "Pertemps Network Handicap Stakes (GBBPlus Race)",
+    "prize_available": 13085
+  },
+  "rac_32297219760": {
+    "course": "Sandown",
+    "race_name": "Sporting Times Apprentice Handicap Stakes",
+    "prize_available": 6019
+  }
+}
