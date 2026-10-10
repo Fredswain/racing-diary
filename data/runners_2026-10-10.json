@@ -1,0 +1,22 @@
+{
+  "rac_32300946548": {
+    "course": "Newmarket",
+    "race_name": "Emirates Autumn Stakes (Group 3)",
+    "prize_available": 42532
+  },
+  "rac_32300557211": {
+    "course": "York",
+    "race_name": "Sky Bet For The Fans Handicap Stakes (gbbplus Race)",
+    "prize_available": 25770
+  },
+  "rac_32300561085": {
+    "course": "York",
+    "race_name": "Sky Bet Sprint Trophy Handicap Stakes (Heritage Handicap)",
+    "prize_available": 51540
+  },
+  "rac_32300566896": {
+    "course": "York",
+    "race_name": "Sky Bet Price Boosts Handicap Stakes (gbbplus Race)",
+    "prize_available": 12885
+  }
+}
