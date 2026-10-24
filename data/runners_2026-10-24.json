@@ -1,0 +1,22 @@
+{
+  "rac_32302153299": {
+    "course": "Newbury",
+    "race_name": "Betvictor St Simon Stakes (Group 3)",
+    "prize_available": 56710
+  },
+  "rac_32302155236": {
+    "course": "Newbury",
+    "race_name": "Betvictor Horris Hill Stakes (Group 3)",
+    "prize_available": 42532
+  },
+  "rac_32302161047": {
+    "course": "Newbury",
+    "race_name": "Hazell & Jefferies Handicap Stakes (gbbplus Race)",
+    "prize_available": 10800
+  },
+  "rac_32302668541": {
+    "course": "Southwell (AW)",
+    "race_name": "AWC Season 14 Has Begun EBF Maiden Stakes (Div I) (GBB/GBBPlus Race)",
+    "prize_available": 6480
+  }
+}
